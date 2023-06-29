@@ -11,9 +11,6 @@ public class Server {
 
     // encryption
     private static final String ENCRYPTION_ALGORITHM = "AES";
-
-    private static final String SECRET_KEY = "3E7B5263C8ABD2F2A15F6D2A0A5B6F9A7C92E1C3A0D5371E5829FDE8C4376549";
-
     private InetAddress ip;
     private int port;
     private int backlog;
@@ -50,7 +47,7 @@ public class Server {
     }
 
     // download file
-    public void send(String path, Socket socket) throws IOException {
+    public void send(Socket socket,String path,final String SECRET_KEY ) throws IOException {
 
         try {
 
